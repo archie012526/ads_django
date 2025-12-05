@@ -1,0 +1,47 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JobBridge — Connect Talent and Opportunity</title>
+  <link rel="stylesheet" href="{% static 'home/css/homepage.css' %}">
+</head>
+<body>
+  <div class="page-frame">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo-circle">JB</div>
+        <div class="brand-text">JobBridge</div>
+      </div>
+
+      <nav class="nav-links">
+        <a>contact</a>
+        <a>jobs</a>
+        <a class="active">home</a>
+        <a>about</a>
+        <a>employers</a>
+      </nav>
+
+      <div class="actions">
+        <a href="{% url 'signup' %}" class="btn-outline">sign up</a>
+        <div class="menu">☰</div>
+      </div>
+    </header>
+
+    <main class="hero-wrap">
+      <div class="hero-inner">
+        <h1 class="hero-title">Connect Talent and<br/>Opportunity</h1>
+        <p class="hero-sub">samting our sht will do (para explanation na guti)</p>
+
+        <div class="cta-row">
+          <button class="btn-primary">find job</button>
+          <button class="btn-secondary">contact us</button>
+        </div>
+
+        <div class="hero-design">design here</div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

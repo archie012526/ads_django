@@ -1,0 +1,52 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — JobBridge</title>
+  <link rel="stylesheet" href="{% static 'home/css/login.css' %}">
+</head>
+<body>
+  <div class="login-page">
+    <div class="login-frame">
+      <div class="left-img">
+        <img src="{% static 'home/img/login-hero.jpg' %}" alt="hero">
+        <div class="img-label">jjmon</div>
+      </div>
+
+      <div class="right-panel">
+        <h1 class="welcome">Welcome back</h1>
+        <p class="sub">enter your email to access your account</p>
+
+        <form method="post" class="login-form" novalidate>
+          {% csrf_token %}
+          <label class="field">
+            <input name="email" type="email" placeholder="Email" required>
+          </label>
+
+          <label class="field">
+            <input name="password" type="password" placeholder="Enter your password" required>
+          </label>
+
+          <div class="row between">
+            <label class="remember"><input type="checkbox" name="remember"> Remember me</label>
+            <a class="forgot" href="/password-reset/">Forgot your password?</a>
+          </div>
+
+          <button class="btn-login" type="submit">Login</button>
+
+          <div class="or">— or register with —</div>
+
+          <div class="socials">
+            <button class="social fb" type="button">Facebook</button>
+            <button class="social gm" type="button">Gmail</button>
+          </div>
+
+          <p class="bottom">Don't have an account? <a href="{% url 'signup' %}">Register now</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

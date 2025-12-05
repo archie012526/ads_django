@@ -1,0 +1,52 @@
+*{box-sizing:border-box}
+body{ margin:0; font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif; background:#1f1f1f; color:#222; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:20px }
+
+.login-frame{
+  width:820px;
+  display:flex;
+  gap:18px;
+  background:#efefef;
+  padding:18px;
+  border-radius:12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border:8px solid #dcdcdc;
+  max-width:calc(100% - 40px);
+}
+
+/* left image panel */
+.left-img{ width:44%; position:relative; border-radius:8px; overflow:hidden; background:#ddd; display:flex; align-items:center; justify-content:center }
+.left-img img{ width:100%; height:100%; object-fit:cover; display:block }
+.img-label{ position:absolute; left:22px; top:22px; background:rgba(255,255,255,0.85); padding:8px 12px; border-radius:6px; font-weight:700 }
+
+/* right panel (form) */
+.right-panel{ width:56%; padding:6px 18px; display:flex; flex-direction:column; justify-content:center }
+.welcome{ margin:0 0 6px; font-size:22px; font-weight:700; color:#111 }
+.sub{ margin:0 0 14px; color:#6b6b6b; font-size:13px }
+
+.login-form{ display:flex; flex-direction:column; gap:8px }
+.field input{ width:100%; padding:12px 14px; border-radius:8px; border:1px solid #e6e6e6; background:#fff }
+.row.between{ display:flex; justify-content:space-between; align-items:center; font-size:13px; color:#666; margin-top:4px }
+
+.remember input{ margin-right:8px }
+.forgot{ color:#4a6df5; text-decoration:none }
+
+.btn-login{
+  margin-top:10px;
+  background:#2b6df6; color:#fff; border:none; padding:10px; border-radius:8px; font-weight:700; cursor:pointer;
+}
+
+.or{ text-align:center; color:#999; margin:12px 0; font-size:13px }
+.socials{ display:flex; gap:10px }
+.social{ flex:1; padding:10px; border-radius:8px; border:none; cursor:pointer; font-weight:700 }
+.fb{ background:#1877f2; color:#fff }
+.gm{ background:#fff; color:#222; border:1px solid #ddd }
+
+.bottom{ text-align:center; color:#666; margin-top:12px; font-size:13px }
+.bottom a{ color:#2b6df6; text-decoration:none }
+
+/* responsive */
+@media (max-width:780px){
+  .login-frame{ flex-direction:column; padding:12px }
+  .left-img, .right-panel{ width:100% }
+  .img-label{ left:12px; top:12px }
+}

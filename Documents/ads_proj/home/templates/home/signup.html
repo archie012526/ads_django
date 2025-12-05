@@ -1,0 +1,55 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sign up — JobBridge</title>
+  <link rel="stylesheet" href="{% static 'home/css/signup.css' %}">
+</head>
+<body>
+  <div class="signup-page">
+    <header class="signup-header">sign up</header>
+
+    <main class="signup-card">
+      <div class="left-panel">
+        <img src="{% static 'home/img/signup-hero.jpg' %}" alt="hero" class="hero-img">
+        <div class="left-overlay">jjmon</div>
+      </div>
+
+      <div class="right-panel">
+        <h2 class="title">create an account</h2>
+        <p class="subtitle">already have an account? <a href="/login/">login</a></p>
+
+        {% if errors %}
+          <ul class="errors" style="color:#b00; margin-bottom:8px;">
+            {% for e in errors %}<li>{{ e }}</li>{% endfor %}
+          </ul>
+        {% endif %}
+
+        <form class="signup-form" method="post" novalidate>
+          {% csrf_token %}
+          <div class="row">
+            <input name="first_name" placeholder="First name" value="{{ form.first_name|default:'' }}" />
+            <input name="last_name" placeholder="Last name" value="{{ form.last_name|default:'' }}" />
+          </div>
+          <input name="email" placeholder="Email" value="{{ form.email|default:'' }}" />
+          <input name="password" type="password" placeholder="Enter your password" />
+
+          <label class="terms">
+            <input type="checkbox" name="agree" /> I agree to the terms and conditions
+          </label>
+
+          <button class="primary" type="submit">create an account</button>
+
+          <div class="or">— or register with —</div>
+          <div class="socials">
+            <button class="social fb">Facebook</button>
+            <button class="social gm">Gmail</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
