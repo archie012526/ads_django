@@ -19,10 +19,17 @@
         <h1 class="welcome">Welcome back</h1>
         <p class="sub">enter your email to access your account</p>
 
+        {% if error %}
+          <div class="error" style="color:#b00; margin-bottom:10px;">{{ error }}</div>
+        {% endif %}
+
         <form method="post" class="login-form" novalidate>
           {% csrf_token %}
+          <!-- preserve next if provided -->
+          <input type="hidden" name="next" value="{{ request.GET.next|default:'' }}">
+
           <label class="field">
-            <input name="email" type="email" placeholder="Email" required>
+            <input name="email" type="email" placeholder="Email" required value="{{ email|default:'' }}">
           </label>
 
           <label class="field">

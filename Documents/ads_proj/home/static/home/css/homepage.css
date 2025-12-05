@@ -1,81 +1,106 @@
 :root{
-  --bg:#f2f1f0;
+  --bg:#f3f3f3;
   --frame:#e0dedc;
-  --card:#fff;
-  --muted:#777;
+  --card:#ffffff;
+  --muted:#6f6f6f;
   --accent:#111;
-  --btn:#e6e6e6;
 }
 *{box-sizing:border-box}
-body{ margin:0; font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; background:var(--bg); color:var(--accent) }
+body{ margin:0; font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif; background:#222; padding:18px }
 
-.page-frame{
-  max-width:1100px;
-  margin:18px auto;
-  border-radius:8px;
-  background:linear-gradient(180deg,#fff,#faf9f8);
-  box-shadow: 0 6px 0 rgba(0,0,0,0.25), 0 8px 24px rgba(0,0,0,0.12);
+.frame{
+  max-width:1180px;
+  margin:0 auto;
+  background:linear-gradient(180deg,#fff,#fbfbfb);
+  border-radius:6px;
+  padding:20px;
+  box-shadow: 0 10px 0 rgba(0,0,0,0.25), 0 12px 30px rgba(0,0,0,0.18);
   border:6px solid var(--frame);
-  overflow:hidden;
 }
 
 /* header */
-.topbar{
+.site-header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:18px 28px;
-  background:transparent;
+  padding:10px 8px;
+  gap:12px;
 }
-.brand{ display:flex; align-items:center; gap:12px; }
-.logo-circle{
-  width:44px; height:44px; border-radius:50%;
-  background:#f6f7f8; border:1px solid #e6e6e6;
-  display:flex; align-items:center; justify-content:center; font-weight:700;
-}
-.brand-text{ font-weight:600; font-size:16px }
+.site-header .left{ display:flex; align-items:center; gap:12px }
+.logo img{ width:44px; height:44px; border-radius:50%; background:#fff; padding:8px; box-shadow:0 6px 18px rgba(0,0,0,0.06) }
+.brand{ font-weight:600; font-size:16px }
 
-.nav-links{ display:flex; gap:18px; align-items:center; color:#222; font-size:14px }
-.nav-links a{ opacity:0.9; cursor:default }
-.nav-links a.active{ font-weight:700; text-decoration:underline; text-underline-offset:6px; }
+.nav{ display:flex; gap:18px; align-items:center; margin-left:18px }
+.nav-item{ color:#111; text-decoration:none; font-size:15px; opacity:0.95 }
 
-/* actions */
-.actions{ display:flex; gap:12px; align-items:center }
-.btn-outline{
-  background:#111; color:#fff; border-radius:18px; padding:8px 14px; border:none; cursor:pointer;
+.right{ display:flex; align-items:center; gap:12px }
+.btn-login{
+  display:inline-block;
+  background:#000;
+  color:#fff;
+  padding:10px 18px;
+  border-radius:26px;
+  text-decoration:none;
+  font-weight:600;
 }
-.menu{ background:#efefef; padding:8px 12px; border-radius:18px; cursor:default }
+.circle-placeholder{
+  width:36px; height:36px; border-radius:50%; background:#e6e6e6;
+}
+.menu{
+  background:#efefef;
+  border:none;
+  padding:8px 12px;
+  border-radius:18px;
+  cursor:pointer;
+}
 
 /* hero */
-.hero-wrap{ padding:36px 32px 48px; display:flex; justify-content:center }
+.hero-area{ padding:36px 18px 40px; display:flex; justify-content:center }
 .hero-inner{ width:100%; max-width:880px; text-align:center }
 
 .hero-title{
-  font-size:44px; line-height:1.02; margin:6px 0 10px; font-weight:700;
+  font-size:56px;
+  line-height:1.02;
+  margin:6px 0 12px;
+  font-weight:800;
+  color:var(--accent);
 }
-.hero-sub{ color:var(--muted); margin-bottom:18px }
+.hero-sub{ color:var(--muted); margin-bottom:20px }
 
-.cta-row{ display:flex; gap:14px; justify-content:center; margin-bottom:26px }
-.btn-primary, .btn-secondary{
-  padding:10px 20px; border-radius:20px; border:none; cursor:pointer; font-weight:600;
+.hero-ctas{ display:flex; gap:14px; justify-content:center; margin-bottom:28px }
+.btn{
+  padding:12px 22px;
+  border-radius:26px;
+  text-decoration:none;
+  font-weight:700;
+  color:#111;
 }
-.btn-primary{ background:#ddd; color:#111 }
-.btn-secondary{ background:#eee; color:#111 }
+.btn-primary{ background:#e7e7e7 }
+.btn-secondary{ background:#efefef }
 
-/* big design panel */
-.hero-design{
-  margin-top:8px;
+/* design panel */
+.hero-panel{
+  margin-top:6px;
+  border-radius:18px;
+  padding:26px;
+  background:transparent;
+}
+.hero-placeholder{
   height:220px;
-  border-radius:16px;
-  background:#d9d2d2;
-  display:flex; align-items:center; justify-content:center;
-  font-size:34px; font-weight:700; color:#111;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  border-radius:18px;
+  background:#d7cfcf;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:36px;
+  font-weight:700;
+  color:#111;
+  box-shadow:0 8px 24px rgba(0,0,0,0.06);
 }
 
 /* responsive */
-@media (max-width:760px){
+@media (max-width:840px){
   .hero-title{ font-size:32px }
-  .hero-design{ height:160px; font-size:26px }
-  .nav-links{ display:none }
+  .hero-placeholder{ height:160px; font-size:26px }
+  .nav{ display:none }
 }

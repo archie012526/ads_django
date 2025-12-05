@@ -8,38 +8,38 @@
   <link rel="stylesheet" href="{% static 'home/css/homepage.css' %}">
 </head>
 <body>
-  <div class="page-frame">
-    <header class="topbar">
-      <div class="brand">
-        <div class="logo-circle">JB</div>
-        <div class="brand-text">JobBridge</div>
+  <div class="frame">
+    <header class="site-header">
+      <div class="left">
+        <a class="logo" href="/"><img src="{% static 'home/img/logo-placeholder.png' %}" alt="JobBridge"></a>
+        <span class="brand">JobBridge</span>
       </div>
 
-      <nav class="nav-links">
-        <a>contact</a>
-        <a>jobs</a>
-        <a class="active">home</a>
-        <a>about</a>
-        <a>employers</a>
+      <nav class="nav">
+        <a class="nav-item" href="/jobs/">jobs</a>
+        <a class="nav-item" href="/about/">about</a>
       </nav>
 
-      <div class="actions">
-        <a href="{% url 'signup' %}" class="btn-outline">sign up</a>
-        <div class="menu">☰</div>
+      <div class="right">
+        <a class="btn-login" href="{% url 'login' %}">login</a>
+        <div class="circle-placeholder"></div>
+        <button class="menu">Menu <span class="bars">≡</span></button>
       </div>
     </header>
 
-    <main class="hero-wrap">
+    <main class="hero-area">
       <div class="hero-inner">
         <h1 class="hero-title">Connect Talent and<br/>Opportunity</h1>
         <p class="hero-sub">samting our sht will do (para explanation na guti)</p>
 
-        <div class="cta-row">
-          <button class="btn-primary">find job</button>
-          <button class="btn-secondary">contact us</button>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="/jobs/">find job</a>
+          <a class="btn btn-secondary" href="/contact/">contact us</a>
         </div>
 
-        <div class="hero-design">design here</div>
+        <div class="hero-panel">
+          <div class="hero-placeholder">design here</div>
+        </div>
       </div>
     </main>
   </div>

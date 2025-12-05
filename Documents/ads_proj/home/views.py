@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login as auth_login
 
 def homepage(request):
     return render(request, 'home/homepage.html')
@@ -31,5 +32,17 @@ def signup(request):
     return render(request, 'home/signup.html')
 
 def login_view(request):
-    # render-only login page; add auth handling later as needed
+    if request.method == 'POST':
+        email = request.POST.get('email', '').strip()
+        password = request.POST.get('password', '')
+        user = authenticate(request, username=email, password=password)
+        if user is not None:
+            auth_login(request, user)
+            # prefer POST next, then GET next, then homepage
+            next_url = request.POST.get('next') or request.GET.get('next') or 'homepage'
+            return redirect(next_url)
+        else:
+            error = 'Invalid email or password.'
+            return render(request, 'home/login.html', {'error': error, 'email': email})
+    # GET
     return render(request, 'home/login.html')
